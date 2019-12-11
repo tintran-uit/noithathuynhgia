@@ -87,24 +87,78 @@
         <div class="container">
             <div class="row karl-new-arrivals">
 
-            @foreach($products as $pro)
+            @foreach($products as $key=>$pro)
                 <!-- Single gallery Item Start -->
-                <div class="col-12 col-sm-6 col-md-4 single_gallery_item all wow fadeInUpBig" data-wow-delay="0.3s">
+                <div class="col-12 col-sm-6 col-md-3 single_gallery_item all wow fadeInUpBig" data-wow-delay="0.{{$key*2+2}}s">
                     <!-- Product Image -->
                     <div class="product-img">
                         <img src="{{ productImage($pro->image) }}" alt="">
                         <div class="product-quicview">
-                            <a href="#" data-toggle="modal" data-target="#quickview"><i class="ti-plus"></i></a>
+                            <a href="#" data-toggle="modal" data-target="#quickviewProduct{{$pro->id}}"><i class="ti-plus"></i></a>
                         </div>
                     </div>
                     <!-- Product Description -->
                     <div class="product-description">
                         <h4 class="product-price">{{ $pro->presentPrice() }}</h4>
-                        <p>{{$pro->name}}</p>
                         <!-- Add to Cart -->
-                        <a href="#" class="add-to-cart-btn">Xem chi tiết</a>
+                        <a href="{{ route('shop.show', $pro->slug) }}" class="products-cart-name">{{$pro->name}}</a>
                     </div>
                 </div>
+                    <!-- ****** Quick View Modal Area Start ****** -->
+                    <div class="modal fade" id="quickviewProduct{{$pro->id}}" tabindex="-1" role="dialog" aria-labelledby="quickview" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true" style="float: right;">&times;</span>
+                                </button>
+
+                                <div class="modal-body">
+                                    <div class="quickview_body">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-12 col-lg-5">
+                                                    <div class="quickview_pro_img">
+                                                        <img src="{{ productImage($pro->image) }}" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-7">
+                                                    <div class="quickview_pro_des">
+                                                        <a href="{{ route('shop.show', $pro->slug) }}">
+                                                            <h4 class="title">{{$pro->name}}</h4>
+                                                        </a>
+                                                        <div class="top_seller_product_rating mb-15">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                        </div>
+                                                        <h5 class="price">{{ $pro->presentPrice() }} <span></span></h5>
+                                                        <p>{!! $pro->details !!}</p>
+                                                    </div>
+                                                    <div class="mt-30">
+                                                        <a href="{{ route('shop.show', $pro->slug) }}" class="product-view-full">Xem chi tiết sản phẩm</a>
+
+                                                    </div>
+
+                                                    <div class="share_wf mt-30">
+                                                        <p>Contact</p>
+                                                        <div class="_icon">
+                                                            <a href="{{setting('site.facebook')}}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                            <a href="#{{setting('site.twitter')}}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                            <a href="{{setting('site.pinterest')}}"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                                            <a href="{{setting('site.linkedin')}}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ****** Quick View Modal Area End ****** -->
             @endforeach
 
             </div>

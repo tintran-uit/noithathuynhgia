@@ -35,6 +35,18 @@
         text-decoration: underline;
     }
 
+    a.products-cart-name{
+        color: #ea1d25;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    a.products-cart-name:hover{
+        color: #ea1d25;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
 
     .page{
         background-color: #f4f2f8;
@@ -52,5 +64,7 @@
     .page-keyword{
         margin-top: 35px;
     }
+
+
 
 

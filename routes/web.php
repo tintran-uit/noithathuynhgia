@@ -4,8 +4,8 @@ Route::get('/', 'LandingPageController@index')->name('landing-page');
 
 Route::get('/page/{slug}', 'PagesController@index')->name('page');
 
-Route::get('/du-an', 'PostController@index')->name('page');
-Route::get('/du-an/{slug}', 'PostController@show')->name('page.show');
+Route::get('/du-an', 'PostController@index')->name('post');
+Route::get('/du-an/{slug}', 'PostController@show')->name('post.show');
 
 Route::post('/getEmailcustomer', 'LandingPageController@getEmailcustomer')->name('landing-page.getemail');
 

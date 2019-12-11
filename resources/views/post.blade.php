@@ -18,13 +18,13 @@
                                 <div class="product-img">
                                     <img src="{{ productImage($post->image) }}" alt="">
                                     <div class="product-quicview">
-                                        <a href="{{ route('page.show', $post->slug) }}"><i class="ti-plus"></i></a>
+                                        <a href="{{ route('post.show', $post->slug) }}"><i class="ti-plus"></i></a>
                                     </div>
                                 </div>
                                 <!-- Product Description -->
                                 <div class="product-description">
                                     <!-- Add to Cart -->
-                                    <a href="{{ route('page.show', $post->slug) }}" class="add-to-cart-btn">{{$post->title}}</a>
+                                    <a href="{{ route('post.show', $post->slug) }}" class="add-to-cart-btn">{{$post->title}}</a>
                                 </div>
                             </div>
                     @endforeach

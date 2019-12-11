@@ -109,7 +109,7 @@
                                     <ul class="navbar-nav animated" id="nav">
                                         <li class="nav-item active"><a class="nav-link" href="{{ route('landing-page') }}">Trang Chủ</a></li>
                                         <li class="nav-item"><a class="nav-link" href="{{ route('shop.index') }}">Sản Phẩm</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="{{ route('page', 'du-an') }}">Dự án</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{ route('post') }}">Dự án</a></li>
                                         <li class="nav-item"><a class="nav-link" href="{{ route('page', 'lien-he') }}">Liên hệ</a></li>
                                     </ul>
                                 </div>
@@ -161,10 +161,10 @@
                 <div class="col-12 col-sm-6 col-md-3 col-lg-2">
                     <div class="single_footer_area">
                         <ul class="footer_widget_menu">
-                            <li><a href="#">Trang chủ</a></li>
-                            <li><a href="#">Shop</a></li>
-                            <li><a href="#">Dự án</a></li>
-                            <li><a href="#">Liên hệ</a></li>
+                            <li><a href="{{ route('landing-page') }}">Trang chủ</a></li>
+                            <li><a href="{{ route('shop.index') }}">Shop</a></li>
+                            <li><a href="{{ route('post') }}">Dự án</a></li>
+                            <li><a href="{{ route('page', 'lien-he') }}">Liên hệ</a></li>
                         </ul>
                     </div>
                 </div>
