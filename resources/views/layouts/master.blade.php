@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="setting('site.description')">
-    <meta name="keywords" content="setting('site.keywords')">
+    <meta name="description" content="{{setting('site.description')}}">
+    <meta name="keywords" content="{{setting('site.keywords')}}">
     <meta name="author" content="Tin Tran">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
