@@ -151,7 +151,7 @@
                     <div class="you_make_like_slider owl-carousel">
                         @foreach($mightAlsoLike as $product)
                         <!-- Single gallery Item -->
-                        <div class="single_gallery_item">
+                        <div class="col-10 offset-1 single_gallery_item">
                             <!-- Product Image -->
                             <div class="product-img">
                                 <img src="{{ productImage($product->image) }}" alt="">

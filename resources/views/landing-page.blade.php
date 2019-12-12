@@ -89,7 +89,7 @@
 
             @foreach($products as $key=>$pro)
                 <!-- Single gallery Item Start -->
-                <div class="col-12 col-sm-6 col-md-3 single_gallery_item all wow fadeInUpBig" data-wow-delay="0.{{$key*2+2}}s">
+                <div class="col-6 col-sm-6 col-md-3 single_gallery_item all wow fadeInUpBig" data-wow-delay="0.{{$key*2+2}}s">
                     <!-- Product Image -->
                     <div class="product-img">
                         <img src="{{ productImage($pro->image) }}" alt="">

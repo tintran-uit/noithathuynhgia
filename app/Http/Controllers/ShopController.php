@@ -23,7 +23,7 @@ class ShopController extends Controller
                 $query->where('slug', request()->category);
             });
             $categoryName = optional($categories->where('slug', request()->category)->first())->name;
-        } else {
+            } else {
             $products = Product::where('featured', true);
             $categoryName = 'Featured';
         }

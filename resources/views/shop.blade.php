@@ -25,7 +25,7 @@
                                     ?>
                                     @foreach($menu as $key => $value)
                                     <!-- Single Item -->
-                                        <li data-toggle="collapse" data-target="#subMenu{{$key}}" class="collapsed active">
+                                        <li data-toggle="collapse" data-target="#subMenu{{$key}}" class="collapsed">
                                             <a href="#">{{$value['name']}} <span class="arrow"></span></a>
                                             <ul class="sub-menu collapse" id="subMenu{{$key}}">
                                                 @foreach($value['child'] as $value)
@@ -41,7 +41,7 @@
                         </div>
 
 
-                        <div class="widget recommended">
+                        <div class="widget recommended d-none d-sm-block">
                             <h6 class="widget-title mb-30">Sản phẩm nổi bật</h6>
 
                             <div class="widget-desc">
@@ -69,7 +69,7 @@
                         <div class="row">
                         @forelse ($products as $pro)
                             <!-- Single gallery Item -->
-                            <div class="col-12 col-sm-6 col-lg-4 single_gallery_item wow fadeInUpBig" data-wow-delay="0.2s">
+                            <div class="col-6 col-sm-6 col-lg-4 single_gallery_item wow fadeInUpBig" data-wow-delay="0.2s">
                                 <!-- Product Image -->
                                 <div class="product-img">
                                     <img src="{{ productImage($pro->image) }}" alt="">
