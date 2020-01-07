@@ -267,7 +267,7 @@
             });
 
             function stripeTokenHandler(token) {
-              // Insert the token ID into the form so it gets submitted to the server
+              // Insert the token ID into the form so it gets submitted to the server t
               var form = document.getElementById('payment-form');
               var hiddenInput = document.createElement('input');
               hiddenInput.setAttribute('type', 'hidden');
