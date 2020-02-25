@@ -25,8 +25,8 @@
                                     ?>
                                     @foreach($menu as $key => $value)
                                     <!-- Single Item -->
-                                        <li data-toggle="collapse" data-target="#subMenu{{$key}}" class="collapsed">
-                                            <a href="#">{{$value['name']}} <span class="arrow"></span></a>
+                                        <li data-toggle="collapse" data-target="#subMenu{{$key}}" @if($categoryName === $value['name']) aria-expanded="true" @else class="collapsed" @endif>
+                                            <a @if(count($value['child'])) href="#" @else href="{{ route('shop.index', ['category' => $value['slug']]) }}" @endif>{{$value['name']}} <span class="arrow"></span></a>
                                             <ul class="sub-menu collapse" id="subMenu{{$key}}">
                                                 @foreach($value['child'] as $value)
                                                     <li><a href="{{ route('shop.index', ['category' => $value['slug']]) }}">{{$value['name']}}</a></li>

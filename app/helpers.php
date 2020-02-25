@@ -28,11 +28,9 @@ function createMenuCategories($categories = null, $parent_id = null)
     if($categories === null){
         $categories = getAllCategory();
     }
-//    return $categories;
     $menu = array();
     foreach ($categories as $key => $item)
     {
-
         // Nếu là chuyên mục con thì hiển thị
         if ($item['parent_id'] == $parent_id)
         {

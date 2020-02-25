@@ -45,7 +45,7 @@
                 @foreach($menu as $key => $value)
                 <!-- Single Item -->
                 <li data-toggle="collapse" data-target="#menu{{$key}}" class="collapsed active">
-                    <a href="#">{{$value['name']}} <span class="arrow"></span></a>
+                    <a @if(count($value['child'])) href="#" @else href="{{ route('shop.index', ['category' => $value['slug']]) }}" @endif>{{$value['name']}} <span class="arrow"></span></a>
                     <ul class="sub-menu collapse" id="menu{{$key}}">
                         @foreach($value['child'] as $value)
                         <li><a href="{{ route('shop.index', ['category' => $value['slug']]) }}">{{$value['name']}}</a></li>

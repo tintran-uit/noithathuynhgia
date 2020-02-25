@@ -17,7 +17,7 @@ class ShopController extends Controller
     {
         $pagination = 9;
         $categories = getAllCategory();
-
+        $activeCat = request()->category;
         if (request()->category) {
             $products = Product::with('categories')->whereHas('categories', function ($query) {
                 $query->where('slug', request()->category);
